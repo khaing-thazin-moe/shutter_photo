@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Shutter Photo</title>
+
+    <!-- bootstarp  v 5.3 css1 js1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <!-- google font quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- jquery Ui css2 js1 -->
+    <link rel="stylesheet" href="./asset/libs/jquery-ui-1.13.2.custom/jquery-ui.min.css">
+    <link rel="stylesheet" href="./asset/libs/jquery-ui-1.13.2.custom/jquery-ui.theme.min.css">
+
+    <!-- owl carousel  css1 js1-->
+    <link rel="stylesheet" href="./asset/libs/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+
+    <!-- wow master css2 js1 -->
+    <link rel="stylesheet" href="./asset/libs/WOW-master/css/site.css">
+    <link rel="stylesheet" href="./asset/libs/WOW-master/css/libs/animate.css">
+
+    <!-- animartion -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- fanchbox css2 js3-->
+    <!-- <link rel="stylesheet" href="./asset/libs/jquery.fancybox-1.3.4/style.css">
+    <link rel="stylesheet" href="./asset/libs/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css"> -->
+
+    <!-- magnific pop up master css1 js1-->
+    <link rel="stylesheet" href="./asset/libs/Magnific-Popup-master/dist/magnific-popup.css">
+
+
+    <!-- Custom Css -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <!-- start loader  -->
+    <div id="preloader">
+        <div class="loading">
+            <svg width="64px" height="48px">
+                <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="back"></polyline>
+                <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="front"></polyline>
+            </svg>
+        </div>
+    </div>
+    <!-- end loader  -->
+    <!-- Start Header Section -->
+    <div class="row p-0 m-0">
+        <!-- Start Header Section -->
+        <div class="p-0 m-0 col-lg-3 col-md-12">
+            <header class="">
+                <nav class="nav navbar-expand-lg flex-lg-column justify-content-between text-start nav_container">
+                    <h2 class="my-lg-5 my-md-0">
+                        <a href="./index.html" class="navbar-brand nav-link fw-semibold">Shutter</a>
+                    </h2>
+                    <button class="navbar-toggler d-block d-lg-none" data-bs-target="#mynav" data-bs-toggle="collapse" >
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </button>
+                    <div id="mynav" class="flex-column justify-content-start align-items-start navbar-collapse collapse ">
+                        <ul class="list-unstyled text-uppercase fw-light menu_list">
+                            <li class="py-2"><a href="./index.html" class="nav-link active">Home</a></li>
+                            <li class="py-2"><a href="./photos.html" class="nav-link">Photos</a></li>
+                            <li class="py-2"><a href="./bio.html" class="nav-link">Bio</a></li>
+                            <li class="py-2"><a href="./blog.html" class="nav-link">Blog</a></li>
+                            <li class="py-2"><a href="./contact.html" class="nav-link">Contact</a></li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center contact_links">
+                            <div class="d-flex justify-content-start" >
+                                <a href="#" class="nav-link mx-1 p-3"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="nav-link mx-1 p-3"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="nav-link mx-1 p-3"><i class="fab fa-instagram"></i></a>
+                            </div>
+                            <div class="d-flex justify-content-end" >
+                                <!-- <div class="form-check form-switch">
+                                    <input type="checkbox" name="nightmode" id="nightmode" class="form-check-input" checked>
+                                </div> -->
+                                <div>
+                                    <label class="switch">
+                                        <input type="checkbox" name="nightmode" id="nightmode" class="form-check-input" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <label for="nightmode" id="day" class="me-2">Day</label>
+                                <label for="nightmode" id="night" class="active">Night</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </nav>
+            </header>
+        </div>
+        <!-- End Header Section  -->
+        <div class="p-0 m-0 col-lg-9 col-md-12">
+            <section class="gallary_section">
+                <div class="row p-0 m-0">
+                    <div class="col-lg-8 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_4.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_4">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_5.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_5">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_1.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_1">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class=" col-lg-6 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_2.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_2">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-4 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_3.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_3">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-4 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_6.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_6">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-4 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_7.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_7">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-8 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_8.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_8">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-4 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_9.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_5">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-6 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_10.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_5">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-6 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_6.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_6">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-8 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_4.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_4">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-4 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_5.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_5">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-6 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_1.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_1">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-6 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_2.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_2">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-4 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_3.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_3">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-4 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_6.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_6">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-4 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_7.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_7">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-8 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_8.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_8">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-4 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_9.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_5">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-6 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_10.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_5">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="wow animate__fadeInUp col-lg-6 col-md-6 img_container">
+                        <a href="./singlephoto.html" class="img_link">
+                            <img src="./asset/imgs/gallery/img_6.jpg.webp" style="object-fit: cover;" width="100%" height="100%" alt="img_6">
+                            <div class="d-flex justify-content-center align-item-center text-center img_over_layer">
+                                <div class="d-flex justify-content-center align-item-center flex-column over_layer_content">
+                                    <h3>Photo Title Here</h3>
+                                    <span>42 photos</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </div>
+    
+
+
+
+
+    <!-- bootstarp  v 5.3 css1 js1 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <!-- Jquery 3-6-2  -->
+    <script src="./asset/libs/jquery3-6-3.js"></script>
+
+    <!-- jquery ui css2 js1  -->
+    <script src="./asset/libs/jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
+
+    <!-- owl carousel  css1 js1-->
+    <script src="./asset/libs/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+    <!-- wow master css2 js1 -->
+    <script src="./asset/libs/WOW-master/dist/wow.min.js"></script>
+
+    <!-- fanchbox css1 js1-->
+    <!-- <script src="./asset/libs/jquery.fancybox-1.3.4/jquery-1.4.3.min.js"></script>
+    <script src="./asset/libs/jquery.fancybox-1.3.4/fancybox/jquery.easing-1.3.pack.js"></script> -->
+    <!-- <script src="./asset/libs/jquery.fancybox-1.3.4/fancybox/jquery.mousewheel-3.0.4.pack.js"></script> -->
+    
+    <!-- magnific pop up master css1 js1-->
+    <script src="./asset/libs/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
+
+
+    <!-- Custom Js -->
+    <script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+:root {
+    --global-font-family : 'Quicksand', sans-serif;
+    --global-color : #ef6c57;
+    --global-color-black : #121212;
+    --global-color-white : #fff;
+    --global-color-gray : #ccc;
+    --global-rgba : rgba(0, 0, 0, 0.6);
+    --global-transition : all 0.2s linear 0s;
+}
+
+
+body {
+    font-family: var(--global-font-family);
+    background-color: var(--global-color-black);
+    transition: var(--global-transition);
+}
+body::-webkit-scrollbar{
+    width: 5px;
+}
+body::-webkit-scrollbar-track{
+    background: linear-gradient(#b1230d,var(--global-color-black));
+}
+body::-webkit-scrollbar-thumb{
+    background-color: var(--global-color);
+    border: 2px solid var(--global-color);
+    border-radius: 3px;
+}
+/* Start loader */
+#preloader {
+    width: 100%;
+    height: 100%;
+    background-color: var(--global-color-black);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+.loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.loading svg polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loading svg polyline#back {
+  fill: none;
+  stroke: #ff4d5033;
+}
+
+.loading svg polyline#front {
+  fill: none;
+  stroke: #ff4d4f;
+  stroke-dasharray: 48, 144;
+  stroke-dashoffset: 192;
+  animation: dash_682 1.4s linear infinite;
+}
+
+@keyframes dash_682 {
+  72.5% {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+
+
+/* end loader */
+/* Start Menu Section */
+header {
+    /* width: 300px; */
+    padding: 40px;
+    color: var(--global-color-white);
+    position: relative;
+    
+}
+.nav_container {
+    width: 300px;
+    position: fixed;
+    left: 40px;
+    top: 40px;
+}
+@media(max-width : 992px){
+    .nav_container {
+        width: 100%;
+        position: static;
+    }
+}
+.nav_container button {
+    background-color: transparent;
+    border: none;
+}
+.nav_container button div {
+    margin: 7px 0px;
+    width: 35px;
+    height: 4px;
+
+    background-color: var(--global-color-white);
+    border-radius: 3px;
+} 
+.navbar-collapse a.nav-link {
+    color: var(--global-color-white);
+    transition: var(--global-transition);
+}
+.menu_list li .nav-link {
+    font-size: 18px;
+    transition: var(--global-transition);
+
+}
+.menu_list li .nav-link.active {
+    color:var(--global-color)
+}
+.contact_links {
+    width: 100%;
+}
+.contact_links a{
+    transition: var(--global-transition);
+}
+.contact_links a:hover {
+    color: var(--global-color);
+    transform: scale(1.2);
+}
+/* start night mode btn */
+/* The switch - the box around the slider */
+.switch {
+  display: block;
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
+  /* size of sliding icon -- sun and moon */
+  --size-of-icon: 1.4em;
+  /* it is like a inline-padding of switch */
+  --slider-offset: 0.3em;
+  position: relative;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f5;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon,1.4em);
+  width: var(--size-of-icon,1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset,0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+  ;
+ transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #303136;
+}
+
+input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+  background: #303136;
+  /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+/* end night mode btn */
+#day,#night{
+    display: none;
+    user-select: none;
+}
+/* #day.active,#night.active {
+    display: block;
+} */
+#nightmode {
+    background-color: var(--global-color);
+    border: none;
+}
+#nightmode:focus{
+    box-shadow: none !important;
+    /* border: none; */
+}
+/* End Menu Section */
+
+/* Start Gellary Section */
+.gallary_section .row {
+    row-gap: 20px;
+}
+.img_link {
+    display: block;
+    height: 300px;
+    position: relative;
+}
+.img_link::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: var(--global-transition);
+}
+.img_over_layer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.over_layer_content {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: var(--global-transition);
+}
+.over_layer_content h3 {
+    color: #fff;
+    font-size: 20px;
+}
+.over_layer_content span {
+    color: var(--global-color-gray);
+}
+
+.img_link:hover::before {
+    background-color: var(--global-rgba);
+}
+.img_link:hover .over_layer_content {
+    transform: translateY(0px);
+    opacity: 1;
+}
+/* End Gellary Section */
+
+
+/* Start Bio Section */
+.bio_content_container h2 {
+    color: var(--global-color-white);
+    font-size: 35px;
+    letter-spacing: 1px;
+    user-select: none;
+}
+.bio_content_container p {
+    color: var(--global-color-gray);
+    font-size: 20px;
+    line-height: 1.8;
+}
+.bio_content_container p span {
+    color: var(--global-color);
+}
+.bio_content_container div span {
+    color: var(--global-color-gray);
+    font-size: 20px;
+    line-height: 1.8;
+}
+/* End Bio Secition */
+
+/* Start Blog Section */
+.section_title {
+    margin-bottom: 50px;
+    color: var(--global-color-white);
+    font-size: 40px;
+    font-weight: 800;
+}
+.blog_img img {
+    border: 3px solid var(--global-color-white);
+}
+.blog_content h3 {
+    color: var(--global-color-white);
+    font-size: 25px;
+    letter-spacing: 1px;
+    user-select: none;
+}
+.blog_content p {
+    color: var(--global-color-gray);
+    font-size: 20px;
+    line-height: 1.8;
+}
+.blog_content p span {
+    color: var(--global-color);
+}
+/* End Blog Section */
+
+/* Start Contact Section */
+.contact_form_container p {
+    color: var(--global-color-gray);
+    font-size: 20px;
+    line-height: 1.8;
+}
+.contact_form label {
+    color: var(--global-color-white);
+    font-size: 20px;
+}
+.contact_form .form-control {
+    padding: 15px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--global-color-gray);
+    font-size: 20px;
+    caret-color: var(--global-color-white);
+}
+.contact_form .form-control:focus {
+    box-shadow: none;
+    border-bottom: 2px solid var(--global-color-white);
+}
+.contact_form .form-control::placeholder {
+    color: var(--global-color-gray);
+
+}
+.contact_form form button {
+    padding: 15px 0px;
+    color: #fff !important;
+    background-color: var(--global-color) !important;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 40px;
+}
+/* End Contact Section */
